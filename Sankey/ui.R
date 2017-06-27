@@ -1,12 +1,19 @@
+library(networkD3)
+library(tidyverse)
+
 fluidPage(
   titlePanel("Sankey Visualization Tool"),
   sidebarLayout(
     sidebarPanel(
+      width = 3,
+      
+      # Alluvial plot ####
+      
       p('Please upload a .csv file with categorical data. If a row identifier exists 
         kindly remove it before uploading the data.'
       ),
       tags$hr(),
-      fileInput('file1', 'Choose file to upload',
+      fileInput('file1', 'Choose CSV file to upload',
                 accept = c(
                   'text/csv',
                   'text/comma-separated-values',
@@ -16,7 +23,7 @@ fluidPage(
                   '.tsv'
                 )
       ),
-      tags$hr(),
+
       checkboxInput('header', 'Header', TRUE),
       radioButtons('sep', 'Separator',
                    c(Comma=',',
@@ -27,7 +34,13 @@ fluidPage(
                    c(None='',
                      'Double Quote'='"',
                      'Single Quote'="'"),
-                   '"')
+                   '"'),
+      
+      # Sankey NetworkD3 ####
+      tags$hr(),
+      
+      fileInput('file2', 'Choose JSON file to upload',
+                accept=c('.json'))
       
     ),
     mainPanel(
@@ -35,8 +48,13 @@ fluidPage(
         tabPanel("Data Summary", 
           column(2, tableOutput('contents'))
         ),
-        tabPanel("Sankey Network", 
+        tabPanel("Alluvial Network", 
                  plotOutput("alluvialPlot")
+        ),
+        tabPanel("Sankey Network", 
+                  #checkboxInput(label = "Sink Right (Uncheck to collapse)", "sinksRight", value = TRUE),
+                  fluidPage(
+                    sankeyNetworkOutput("sankey"))
         )
         )
     )
