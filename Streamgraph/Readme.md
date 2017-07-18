@@ -3,7 +3,7 @@
   
   ![Streamplot](./Streamplot.png "Stream plot")
 
-# Steps
+## Steps
 - Download the app.R and stocks.csv files
 - Open app.R in Rstudio
 - Run the app
@@ -11,11 +11,11 @@
 - Upload the stocks.csv file 
 - Oberve the visualization on the data upload tab
 
-# Note
+## Note
 - The upload functionality will work on a restricted data format for this app.
 - The code can be modified appropriately to suit the available data format
 
-# References
+## References
 - (https://hrbrmstr.github.io/streamgraph/)
 - (https://github.com/hrbrmstr/streamgraph)
 - (http://rpubs.com/hrbrmstr/59200)
