@@ -1,5 +1,5 @@
 # Sankey Shiny Visualization Tool
-  Sankey diagrams are a specific type of flow diagram, in which the width of the arrows is shown proportionally to the flow quantity.
+  Sankey diagrams are a specific type of flow diagram, in which the width of the arrows is shown proportionally to the flow quantity. [Wikipedia](https://en.wikipedia.org/wiki/Sankey_diagram)
   
   ![Sankey](./Sankey.png "Sankey diagram")
 
