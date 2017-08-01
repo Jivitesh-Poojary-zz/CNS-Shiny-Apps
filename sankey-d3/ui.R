@@ -19,9 +19,9 @@ sidebar <- dashboardSidebar(
   sidebarMenu(
     menuItem("Dashboard", tabName = "dashboard", icon = icon("dashboard")),
    # menuItem("Simple Sankey d3", tabName = "sankey1", icon = icon("bar-chart-o")),
-   menuItem("Sankey d3", tabName = "sankey3", icon = icon("bar-chart-o")),
-   menuItem("Sankey R", tabName = "sankey2", icon = icon("bar-chart-o")),
-    menuItem("References", icon = icon("fa fa-commenting"), tabName = "references")
+   menuItem("Sankey d3", tabName = "sankey3", icon = icon("bar-chart-o"))
+   #menuItem("Sankey R", tabName = "sankey2", icon = icon("bar-chart-o"))
+   # menuItem("References", icon = icon("fa fa-commenting"), tabName = "references")
   )
 )
 
@@ -85,27 +85,30 @@ body <- dashboardBody(
            #         )
            #         )
            #         ),
-           tabItem(tabName="sankey2",
-
-                     fluidRow(
-                       column(width = 12,
-                       box(width = 12,
-                           tags$div(id = "box", 
-                                  #  dataTableOutput("sum"))
-                       sankeyNetworkOutput("sankey"))
-                       )
-                       )
-                       ),
-                  # ),
-                   fluidRow(
-                     column(12,
-                            sliderInput("fontsize", "Font Size:", min = 2, max = 20, value = 12),
-                            sliderInput("nodewid", "Node Width:", min = 5, max = 100, value = 30),
-                            sliderInput("nodepad", "Node Padding:", min = 0, max = 100, value = 5),
-                            sliderInput("iter", "Iterations:", min = 0, max = 100, value = 0)
-                     )
-                   )
-           ),
+#            tabItem(tabName="sankey2",
+# fluidPage(
+#                      fluidRow(
+#                        column(width = 12,
+#                        box(width = 12,
+#                            tags$div(id = "box" ,
+#                                     plotOutput("hist")
+#                                   #  dataTableOutput("sum"))
+#                       # sankeyNetworkOutput("sankey"))
+#                        )
+#                        )
+#                        
+#                    )
+#                    ),
+#                    fluidRow(
+#                      column(12,
+#                             sliderInput("fontsize", "Font Size:", min = 2, max = 20, value = 12),
+#                             sliderInput("nodewid", "Node Width:", min = 5, max = 100, value = 30),
+#                             sliderInput("nodepad", "Node Padding:", min = 0, max = 100, value = 5),
+#                             sliderInput("iter", "Iterations:", min = 0, max = 100, value = 0)
+#                      )
+#                    )
+#            )
+# ),
            tabItem(tabName="sankey3",
                    fluidRow(column(width = 12,
                                    h4("Sankey Using d3", align = "center"),
@@ -123,7 +126,7 @@ body <- dashboardBody(
                                                 #load D3JS library
                                                 tags$head(tags$script(src="https://d3js.org/d3.v3.min.js")),
                                                 tags$head(tags$script(src="sankey.js")),
-                                                tags$head(tags$script(src="http://gc.kis.v2.scr.kaspersky-labs.com/FF9B637C-C0D9-5941-A355-F5A0E3CB842F/main.js")),
+                                                #tags$head(tags$script(src="https://gc.kis.v2.scr.kaspersky-labs.com/FF9B637C-C0D9-5941-A355-F5A0E3CB842F/main.js")),
                                                 tags$head(tags$script(src="d3script-sankey-d3.js") ),
                                                 br()
                                        )

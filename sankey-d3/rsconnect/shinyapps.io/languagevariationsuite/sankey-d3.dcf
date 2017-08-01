@@ -1,0 +1,11 @@
+name: sankey-d3
+title: sankey-d3
+account: languagevariationsuite
+server: shinyapps.io
+appId: 201311
+bundleId: 923960
+url: https://languagevariationsuite.shinyapps.io/sankey-d3/
+when: 1501627727.13884
+asMultiple: FALSE
+asStatic: FALSE
+ignoredFiles: Integrated sankey.zip|www/legend.js|www/OLD - sankey.js
