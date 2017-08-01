@@ -21,6 +21,7 @@ var svg = d3.select("#sankeyd3plus").append("svg")
     {"id": "beta"},
     {"id": "gamma"}
   ];
+
   var edges = [
     {"strength": 2, "source": 0, "target": 2},
     {"strength": 1, "source": 1, "target": 2},
@@ -44,4 +45,5 @@ var svg = d3.select("#sankeyd3plus").append("svg")
     //.size(10)
     .type("sankey")
     .draw();
-  })
+    
+  });
