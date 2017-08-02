@@ -19,7 +19,8 @@ sidebar <- dashboardSidebar(
   sidebarMenu(
     menuItem("Dashboard", tabName = "dashboard", icon = icon("dashboard")),
    # menuItem("Simple Sankey d3", tabName = "sankey1", icon = icon("bar-chart-o")),
-   menuItem("Sankey d3", tabName = "sankey3", icon = icon("bar-chart-o"))
+   menuItem("Sankey d3", tabName = "sankey3", icon = icon("bar-chart-o")),
+   menuItem("IVMOOC Sankey d3", tabName = "ivmooc_sankey3", icon = icon("bar-chart-o"))
    #menuItem("Sankey R", tabName = "sankey2", icon = icon("bar-chart-o"))
    # menuItem("References", icon = icon("fa fa-commenting"), tabName = "references")
   )
@@ -108,7 +109,7 @@ body <- dashboardBody(
 #                      )
 #                    )
 #            )
-# ),
+# )       ,
            tabItem(tabName="sankey3",
                    fluidRow(column(width = 12,
                                    h4("Sankey Using d3", align = "center"),
@@ -133,7 +134,33 @@ body <- dashboardBody(
                                    )
                    )
                    )
-           )
+           ),
+        tabItem(tabName="ivmooc_sankey3",
+        fluidRow(column(width = 12,
+                        h4("IVMOOC Sankey Using d3", align = "center"),
+                        br(),
+                        br(),
+                        # tags$script(src="d3.js"),
+                        # tags$script(src="d3plus.js"),
+                        #  tags$script(src="d3plus.min.js"),
+                        # tags$script(src="d3.min.js"),
+                        # tags$script(src="sankey.js"),
+                        #  tags$script(src="main.js"),
+                        box(width = 12,
+                            tags$div(id = "charts", # rename 
+                                     tags$head(tags$link(rel = "stylesheet", type = "text/css", href = "style.css")),
+                                     #load D3JS library
+                                     tags$head(tags$script(src="https://d3js.org/d3.v3.min.js")),
+                                     tags$head(tags$script(src="sankey.js")),
+                                     #tags$head(tags$script(src="https://gc.kis.v2.scr.kaspersky-labs.com/FF9B637C-C0D9-5941-A355-F5A0E3CB842F/main.js")),
+                                     tags$head(tags$script(src="d3script-sankey-d3-IVMOOC.js") ),
+                                     br()
+                            )
+                        )
+        )
+        )
+)
+
       )
   
 )

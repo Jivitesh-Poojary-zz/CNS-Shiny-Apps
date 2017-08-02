@@ -25,11 +25,13 @@ shinyServer(function(input, output, session) {
   
   sankey_d3plus <- "file_name"
   sankey_d3 <- "file_name"
+  ivmooc_sankey_d3 <- "sankeyivmooc_final.JSON"
   var_json3 <- "file_name"
   sample_bar <- "file_name"
   
   #session$sendCustomMessage(type="sankey_d3plus",sankey_d3plus)
   session$sendCustomMessage(type="sankey_d3",sankey_d3)
+  session$sendCustomMessage(type="IVMOOC_sankey_d3",ivmooc_sankey_d3)
   session$sendCustomMessage(type="jsondata3",var_json3)
   session$sendCustomMessage(type="sample_bar",sample_bar)
   
